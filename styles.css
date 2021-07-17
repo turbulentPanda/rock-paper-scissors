@@ -70,6 +70,7 @@ body {
     place-items: center;
 }
 
+/******** Header ********/
 .header {
     display: grid;
     grid-area: header;
@@ -78,6 +79,7 @@ body {
     width: 100%;
 }
 
+/******** Main Content ********/
 .main-content {
     border: 5px solid red;
     display: grid;
