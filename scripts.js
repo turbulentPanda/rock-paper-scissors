@@ -3,10 +3,10 @@ function playGame() {
     let computerWins = 0;
 
     for (let i = 0; i < 5; i++) {
-        let matchResult = playOneRound();
-        if (matchResult === 'win') {
+        let roundResult = playOneRound();
+        if (roundResult === 'win') {
             userWins++;
-        } else if (matchResult === 'lose') {
+        } else if (roundResult === 'lose') {
             computerWins++;
         }
     }
@@ -17,11 +17,11 @@ playGame();
 
 function compareScores(userScore, computerScore) {
     if (userScore > computerScore) {
-        console.log(`Congratulations! You win! You won ${userScore} game(s). The computer only won ${computerScore} game(s).`);
+        console.log(`Congratulations! You win! You won ${userScore} round(s). The computer only won ${computerScore} round(s).`);
     } else if (userScore < computerScore) {
-        console.log(`Sorry. You lost! The computer won ${computerScore} game(s) but you only won ${userScore} game(s).`);
+        console.log(`Sorry. You lost! The computer won ${computerScore} round(s) but you only won ${userScore} round(s).`);
     } else {
-        console.log(`It's a draw! You and the computer both won ${userScore} game(s)!`);
+        console.log(`It's a draw! You and the computer both won ${userScore} round(s)!`);
     }
 }
 
