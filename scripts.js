@@ -10,7 +10,6 @@ function playGame() {
             computerWins++;
         }
     }
-
     compareScores(userWins, computerWins);
 }
 
