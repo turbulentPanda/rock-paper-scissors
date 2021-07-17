@@ -1,4 +1,45 @@
 
+function playOneRound() {
+    let computerSelection = computerPlay();
+    let userSelection = userPlay();
+    let gameResult;
+
+    if (userSelection === 'rock') {
+        if (computerSelection === 'scissors') {
+            gameResult = 'win';
+        } else if (computerSelection === 'paper') {
+            gameResult = 'lose';
+        } else {
+            gameResult = 'draw';
+        }
+    } else if (userSelection === 'paper') {
+        if (computerSelection === 'rock') {
+            gameResult = 'win';
+        } else if (computerSelection === 'scissors') {
+            gameResult = 'lose';
+        } else {
+            gameResult = 'draw';
+        }
+    } else if (userSelection === 'scissors') {
+        if (computerSelection === 'paper') {
+            gameResult = 'win';
+        } else if (computerSelection === 'rock') {
+            gameResult = 'lose';
+        } else {
+            gameResult = 'draw';
+        }
+    }
+    if (gameResult === 'win') {
+        return displayWinningMessage(userSelection, computerSelection);
+    } else if (gameResult === 'lose') {
+        return displayLosingMessage(userSelection, computerSelection);
+    } else {
+        return displayDrawMessage();
+    }
+}
+
+let message = playOneRound();
+console.log(message);
 
 function computerPlay() {
     let randomNumber = getRandomInteger(3);
@@ -28,7 +69,17 @@ function userPlay() {
     return userSelection;
 }
 
+function displayWinningMessage(userSelection, computerSelection) {
+    return `You win! ${userSelection[0].toUpperCase()}${userSelection.substring(1)} beats ${computerSelection}!`;
+}
 
+function displayLosingMessage(userSelection, computerSelection) {
+    return `You lose! ${computerSelection[0].toUpperCase()}${computerSelection.substring(1)} beats ${userSelection}!`
+}
+
+function displayDrawMessage() {
+    return "It's a draw!";
+}
 
 function getRandomInteger(maximum) {
     return Math.floor(Math.random() * maximum)
