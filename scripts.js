@@ -13,6 +13,8 @@ function playGame() {
     compareScores(userWins, computerWins);
 }
 
+playGame();
+
 function compareScores(userScore, computerScore) {
     if (userScore > computerScore) {
         console.log(`Congratulations! You win! You won ${userScore} game(s). The computer only won ${computerScore} game(s).`);
@@ -53,6 +55,10 @@ function playOneRound() {
             gameResult = 'draw';
         }
     }
+    displayRoundResults(gameResult, userSelection, computerSelection);
+}
+
+function displayRoundResults(gameResult, userSelection, computerSelection) {
     if (gameResult === 'win') {
         console.log(displayWinningMessage(userSelection, computerSelection));
         return 'win';
