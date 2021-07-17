@@ -48,3 +48,42 @@ table {
 }
 
 /******** End CSS Reset ********/
+/********* Page Setup ********/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.page-container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main-content";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    place-items: center;
+}
+
+.header {
+    display: grid;
+    grid-area: header;
+    height: 100%;
+    place-items: center;
+    width: 100%;
+}
+
+.main-content {
+    border: 5px solid red;
+    display: grid;
+    grid-area: main-content;
+    height: 100%;
+    place-items: center;
+    width: 100%;
+}
+
