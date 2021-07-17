@@ -15,7 +15,18 @@ function computerPlay() {
     }
 }
 
-
+function userPlay() {
+    let userSelection;
+    while (true) {
+        userSelection = prompt("Enter rock, paper, or scissors.").toLowerCase()
+        if (userSelection === "rock" || userSelection === "paper" || userSelection === "scissors") {
+            break;
+        } else {
+            continue;
+        }
+    }
+    return userSelection;
+}
 
 
 
