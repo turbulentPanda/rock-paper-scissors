@@ -1,9 +1,10 @@
 function playGame() {
     let userWins = 0;
     let computerWins = 0;
+    let roundResult;
 
     for (let i = 0; i < 5; i++) {
-        let roundResult = playOneRound();
+        roundResult = playOneRound();
         if (roundResult === 'win') {
             userWins++;
         } else if (roundResult === 'lose') {
@@ -56,6 +57,7 @@ function playOneRound() {
         }
     }
     displayRoundResults(gameResult, userSelection, computerSelection);
+    return gameResult;
 }
 
 function displayRoundResults(gameResult, userSelection, computerSelection) {
