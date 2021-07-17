@@ -1,3 +1,12 @@
+function playGame() {
+    let userWins = 0;
+    let computerWins = 0;
+
+    for (let i = 0; i < 5; i++) {
+        let matchResult = playOneRound();
+
+    }
+}
 
 function playOneRound() {
     let computerSelection = computerPlay();
@@ -30,11 +39,14 @@ function playOneRound() {
         }
     }
     if (gameResult === 'win') {
-        return displayWinningMessage(userSelection, computerSelection);
+        console.log(displayWinningMessage(userSelection, computerSelection));
+        return 'win';
     } else if (gameResult === 'lose') {
-        return displayLosingMessage(userSelection, computerSelection);
+        console.log(displayLosingMessage(userSelection, computerSelection));
+        return 'lose';
     } else {
-        return displayDrawMessage();
+        console.log(displayDrawMessage());
+        return 'draw';
     }
 }
 
