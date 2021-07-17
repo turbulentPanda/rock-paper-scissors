@@ -4,7 +4,23 @@ function playGame() {
 
     for (let i = 0; i < 5; i++) {
         let matchResult = playOneRound();
+        if (matchResult === 'win') {
+            userWins++;
+        } else if (matchResult === 'lose') {
+            computerWins++;
+        }
+    }
 
+    compareScores(userWins, computerWins);
+}
+
+function compareScores(userScore, computerScore) {
+    if (userScore > computerScore) {
+        console.log(`Congratulations! You win! You won ${userScore} game(s). The computer only won ${computerScore} game(s).`);
+    } else if (userScore < computerScore) {
+        console.log(`Sorry. You lost! The computer won ${computerScore} game(s) but you only won ${userScore} game(s).`);
+    } else {
+        console.log(`It's a draw! You and the computer both won ${userScore} game(s)!`);
     }
 }
 
