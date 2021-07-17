@@ -38,9 +38,6 @@ function playOneRound() {
     }
 }
 
-let message = playOneRound();
-console.log(message);
-
 function computerPlay() {
     let randomNumber = getRandomInteger(3);
     switch (randomNumber) {
