@@ -76,19 +76,6 @@ function playOneRound(userMove) {
     return roundResult;
 }
 
-function displayRoundResults(roundResult, userSelection, computerSelection) {
-    if (roundResult === 'win') {
-        console.log(displayWinningMessage(userSelection, computerSelection));
-        return 'win';
-    } else if (roundResult === 'lose') {
-        console.log(displayLosingMessage(userSelection, computerSelection));
-        return 'lose';
-    } else {
-        console.log(displayDrawMessage());
-        return 'draw';
-    }
-}
-
 function computerPlay() {
     let randomNumber = getRandomInteger(3);
     switch (randomNumber) {
@@ -101,6 +88,19 @@ function computerPlay() {
         case 2:
             return "scissors";
             break;
+    }
+}
+
+function displayRoundResults(roundResult, userSelection, computerSelection) {
+    if (roundResult === 'win') {
+        console.log(displayWinningMessage(userSelection, computerSelection));
+        return 'win';
+    } else if (roundResult === 'lose') {
+        console.log(displayLosingMessage(userSelection, computerSelection));
+        return 'lose';
+    } else {
+        console.log(displayDrawMessage());
+        return 'draw';
     }
 }
 
