@@ -104,19 +104,6 @@ function computerPlay() {
     }
 }
 
-function userPlay() {
-    let userSelection;
-    while (true) {
-        userSelection = prompt("Enter rock, paper, or scissors.").toLowerCase()
-        if (userSelection === "rock" || userSelection === "paper" || userSelection === "scissors") {
-            break;
-        } else {
-            continue;
-        }
-    }
-    return userSelection;
-}
-
 function displayWinningMessage(userSelection, computerSelection) {
     return `You win! ${userSelection[0].toUpperCase()}${userSelection.substring(1)} beats ${computerSelection}!`;
 }
