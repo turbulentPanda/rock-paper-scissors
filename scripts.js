@@ -75,12 +75,12 @@ function updateScore(roundResult) {
 function updateMoveHistory(userSelection, computerSelection) {
     const playerMoveset = document.querySelector('.player-moveset');
     let playerMove = document.createElement('li');
-    playerMove.textContent = `${userSelection}`;
+    playerMove.textContent = `${userSelection[0].toUpperCase()}${userSelection.substring(1)}`;
     playerMoveset.appendChild(playerMove);
 
     const computerMoveset = document.querySelector('.computer-moveset');
     let computerMove = document.createElement('li');
-    computerMove.textContent = `${computerSelection}`;
+    computerMove.textContent = `${computerSelection[0].toUpperCase()}${computerSelection.substring(1)}`;
     computerMoveset.appendChild(computerMove);
 }
 
