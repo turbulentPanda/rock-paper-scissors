@@ -45,42 +45,42 @@ function compareScores(userScore, computerScore) {
 function playOneRound(userMove) {
     let computerSelection = computerPlay();
     let userSelection = userMove;
-    let gameResult;
+    let roundResult;
 
     if (userSelection === 'rock') {
         if (computerSelection === 'scissors') {
-            gameResult = 'win';
+            roundResult = 'win';
         } else if (computerSelection === 'paper') {
-            gameResult = 'lose';
+            roundResult = 'lose';
         } else {
-            gameResult = 'draw';
+            roundResult = 'draw';
         }
     } else if (userSelection === 'paper') {
         if (computerSelection === 'rock') {
-            gameResult = 'win';
+            roundResult = 'win';
         } else if (computerSelection === 'scissors') {
-            gameResult = 'lose';
+            roundResult = 'lose';
         } else {
-            gameResult = 'draw';
+            roundResult = 'draw';
         }
     } else if (userSelection === 'scissors') {
         if (computerSelection === 'paper') {
-            gameResult = 'win';
+            roundResult = 'win';
         } else if (computerSelection === 'rock') {
-            gameResult = 'lose';
+            roundResult = 'lose';
         } else {
-            gameResult = 'draw';
+            roundResult = 'draw';
         }
     }
-    displayRoundResults(gameResult, userSelection, computerSelection);
-    return gameResult;
+    displayRoundResults(roundResult, userSelection, computerSelection);
+    return roundResult;
 }
 
-function displayRoundResults(gameResult, userSelection, computerSelection) {
-    if (gameResult === 'win') {
+function displayRoundResults(roundResult, userSelection, computerSelection) {
+    if (roundResult === 'win') {
         console.log(displayWinningMessage(userSelection, computerSelection));
         return 'win';
-    } else if (gameResult === 'lose') {
+    } else if (roundResult === 'lose') {
         console.log(displayLosingMessage(userSelection, computerSelection));
         return 'lose';
     } else {
