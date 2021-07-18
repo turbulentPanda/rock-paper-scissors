@@ -22,7 +22,7 @@ const computerMoveset = document.querySelector('.computer-moveset');
 
 
 function compareScores(userScore, computerScore) {
-    let headerMessage = document.querySelector('.header > h2');
+    let headerMessage = document.querySelector('.outcome-message');
     if (userScore > computerScore) {
         headerMessage.textContent = "Congratulations! You won the whole thing! Let's play again!";
     } else if (userScore < computerScore) {
@@ -141,7 +141,7 @@ function computerPlay() {
 }
 
 function displayRoundResults(roundResult) {
-    let headerMessage = document.querySelector('.header > h2');
+    let headerMessage = document.querySelector('.outcome-message');
     if (roundResult === 'win') {
         headerMessage.textContent = `${displayWinningMessage()}`;
         return 'win';

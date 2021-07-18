@@ -55,7 +55,7 @@ table {
 
 * {
     box-sizing: border-box;
-    color: #457b9d;
+    color: #fff;;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -81,25 +81,30 @@ body {
 
 /******** Header ********/
 .header {
-    background: #f1faee;
-    color: #457b9d;
+    background: #485665;
+    border-bottom: 4px solid #c6419a;
     display: grid;
     grid-area: header;
     height: 100%;
-    font-size: 60px;
-    padding: 5%;
+    font-size: 50px;
+    padding: 2.5%;
     place-items: center;
     width: 100%;
+}
+
+.header > h1 {
+    color: #22aaa1;
 }
 
 .header > h2 {
     font-size: 30px;
     margin-top: 20px;
+    text-align: center;
 }
 
 /******** Main Content ********/
 .main-content {
-    background: #f1faee;
+    background: #262e36;
     display: grid;
     grid-area: main-content;
     grid-template-areas: 
@@ -107,7 +112,7 @@ body {
         "move-buttons"
         "move-history";
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr 4fr;
+    grid-template-rows: 3fr 5fr 3fr;
     height: 100%;
     place-items: center;
     width: 100%;
@@ -116,9 +121,30 @@ body {
 /******** Scoreboard ********/
 .scoreboard {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1;
     font-size: 30px;
+    grid-template-areas: 
+        "outcome-message    outcome-message"
+        "player-score       computer-score";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    place-items: center;
+    width: 100%;
+}
+
+.outcome-message {
+    grid-area: outcome-message;
+}
+
+.player-score {
+    grid-area: player-score;
+    justify-self: end;
+    margin-right: 50px;
+}
+
+.computer-score {
+    grid-area: computer-score;
+    justify-self: start;
 }
 
 /******** Move Buttons ********/
@@ -127,11 +153,16 @@ body {
     grid-gap: 20px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
+    place-items: center;
 }
 
 .move-button {
-    height: 250px;
-    width: 250px;
+    background: transparent;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    height: 200px;
+    margin: 35px 0;
+    width: 200px;
 }
 
 button {
@@ -158,14 +189,14 @@ ul {
 }
 
 ul > h3 {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #fff;
     padding-bottom: 10px;
     width: 250px;
 }
 
 li {
     font-size: 25px;
-    margin: 10px;
+    margin: 5px;
 }
 
 .player-moveset {
