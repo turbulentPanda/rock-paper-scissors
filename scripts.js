@@ -1,7 +1,7 @@
 let userWins = 0;
 let computerWins = 0;
 
-function updateScore() {
+function updateScore(userScore, computerScore) {
     if (userScore > computerScore) {
         userWins++;
     } else if (userScore < computerScore) {
