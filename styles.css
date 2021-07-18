@@ -94,6 +94,12 @@ body {
     border: 5px solid red;
     display: grid;
     grid-area: main-content;
+    grid-template-areas: 
+        "scoreboard"
+        "move-buttons"
+        "move-history";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 5fr;
     height: 100%;
     place-items: center;
     width: 100%;
