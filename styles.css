@@ -91,7 +91,6 @@ body {
 
 /******** Main Content ********/
 .main-content {
-    border: 5px solid red;
     display: grid;
     grid-area: main-content;
     grid-template-areas: 
@@ -125,7 +124,6 @@ button {
 /******** Move History ********/
 .move-history {
     align-items: start;
-    border: 3px solid pink;
     display: grid;
     grid-template-areas:
         "player-moveset    computer-moveset";
