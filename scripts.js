@@ -1,6 +1,12 @@
 let userWins = 0;
 let computerWins = 0;
 
+let playerScore = document.querySelector('.player-score');
+let computerScore = document.querySelector('.computer-score');
+
+playerScore.textContent = `${userWins}`;
+computerScore.textContent = `${computerWins}`;
+
 const rockButton = document.querySelector('#rock');
 rockButton.addEventListener('click', () => playOneRound('rock'));
 
@@ -51,17 +57,19 @@ function playOneRound(userMove) {
         }
     }
     displayRoundResults(roundResult, userSelection, computerSelection);
+    updateScore(roundResult)
     return roundResult;
 }
 
 function updateScore(roundResult) {
     if (roundResult === 'win') {
         userWins++;
+        playerScore.textContent = `${userWins}`;
     } else if (roundResult === 'lose') {
         computerWins++;
+        computerScore.textContent = `${computerWins}`;
     }
 }
-
 
 function computerPlay() {
     let randomNumber = getRandomInteger(3);
@@ -106,4 +114,3 @@ function displayDrawMessage() {
 function getRandomInteger(maximum) {
     return Math.floor(Math.random() * maximum)
 }
-
