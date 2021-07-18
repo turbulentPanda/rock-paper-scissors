@@ -32,15 +32,15 @@ scissorsButton.addEventListener('click', () => playOneRound('scissors'));
 // }
 
 
-// function compareScores(userScore, computerScore) {
-//     if (userScore > computerScore) {
-//         console.log(`Congratulations! You win! You won ${userScore} round(s). The computer only won ${computerScore} round(s).`);
-//     } else if (userScore < computerScore) {
-//         console.log(`Sorry. You lost! The computer won ${computerScore} round(s) but you only won ${userScore} round(s).`);
-//     } else {
-//         console.log(`It's a draw! You and the computer both won ${userScore} round(s)!`);
-//     }
-// }
+function compareScores(userScore, computerScore) {
+    if (userScore > computerScore) {
+        console.log("Congratulations! You won the whole thing!");
+    } else if (userScore < computerScore) {
+        console.log("Sorry! You lost the whole thing!");
+    } else {
+        console.log("Not the worst! You and the computer tied!");
+    }
+}
 
 function playOneRound(userMove) {
     let computerSelection = computerPlay();
