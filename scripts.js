@@ -86,12 +86,12 @@ function computerPlay() {
     }
 }
 
-function displayRoundResults(roundResult, userSelection, computerSelection) {
+function displayRoundResults(roundResult) {
     if (roundResult === 'win') {
-        console.log(displayWinningMessage(userSelection, computerSelection));
+        console.log(displayWinningMessage());
         return 'win';
     } else if (roundResult === 'lose') {
-        console.log(displayLosingMessage(userSelection, computerSelection));
+        console.log(displayLosingMessage());
         return 'lose';
     } else {
         console.log(displayDrawMessage());
@@ -99,16 +99,15 @@ function displayRoundResults(roundResult, userSelection, computerSelection) {
     }
 }
 
-function displayWinningMessage(userSelection, computerSelection) {
-    return `You win! ${userSelection[0].toUpperCase()}${userSelection.substring(1)} beats ${computerSelection}!`;
+function displayWinningMessage() {
+    return "Yay! You won this round!";
 }
 
-function displayLosingMessage(userSelection, computerSelection) {
-    return `You lose! ${computerSelection[0].toUpperCase()}${computerSelection.substring(1)} beats ${userSelection}!`
+function displayLosingMessage() {
+    return "Sorry! You lost this round!"
 }
-
 function displayDrawMessage() {
-    return "It's a draw!";
+    return "This round was a draw!"
 }
 
 function getRandomInteger(maximum) {
