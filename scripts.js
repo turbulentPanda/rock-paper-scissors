@@ -9,10 +9,14 @@ function updateScore(userScore, computerScore) {
     }
 }
 
-const moveButtons = document.querySelectorAll('.move-button');
-moveButtons.forEach((button) => {
-    button.addEventListener('click', playOneRound);
-});
+const rockButton = document.querySelector('#rock');
+rockButton.addEventListener('click', () => playOneRound('rock'));
+
+const paperButton = document.querySelector('#paper');
+paperButton.addEventListener('click', () => playOneRound('paper'));
+
+const scissorsButton = document.querySelector('#scissors');
+scissorsButton.addEventListener('click', () => playOneRound('scissors'));
 
 // function playGame() {
 //     let roundResult;
@@ -27,21 +31,20 @@ moveButtons.forEach((button) => {
 //     compareScores(userWins, computerWins);
 // }
 
-// playGame();
 
-function compareScores(userScore, computerScore) {
-    if (userScore > computerScore) {
-        console.log(`Congratulations! You win! You won ${userScore} round(s). The computer only won ${computerScore} round(s).`);
-    } else if (userScore < computerScore) {
-        console.log(`Sorry. You lost! The computer won ${computerScore} round(s) but you only won ${userScore} round(s).`);
-    } else {
-        console.log(`It's a draw! You and the computer both won ${userScore} round(s)!`);
-    }
-}
+// function compareScores(userScore, computerScore) {
+//     if (userScore > computerScore) {
+//         console.log(`Congratulations! You win! You won ${userScore} round(s). The computer only won ${computerScore} round(s).`);
+//     } else if (userScore < computerScore) {
+//         console.log(`Sorry. You lost! The computer won ${computerScore} round(s) but you only won ${userScore} round(s).`);
+//     } else {
+//         console.log(`It's a draw! You and the computer both won ${userScore} round(s)!`);
+//     }
+// }
 
-function playOneRound() {
+function playOneRound(userMove) {
     let computerSelection = computerPlay();
-    let userSelection = userPlay();
+    let userSelection = userMove;
     let gameResult;
 
     if (userSelection === 'rock') {
