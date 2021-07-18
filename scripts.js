@@ -72,6 +72,14 @@ function updateScore(roundResult) {
     }
 }
 
+function checkIfGameEnded(userScore, computerScore) {
+    if (userScore === 0 || computerScore === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function updateMoveHistory(userSelection, computerSelection) {
     const playerMoveset = document.querySelector('.player-moveset');
     let playerMove = document.createElement('li');
