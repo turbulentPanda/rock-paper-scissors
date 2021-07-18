@@ -108,5 +108,29 @@ body {
 /******** Move Buttons ********/
 
 /******** Move History ********/
+.move-history {
+    align-items: start;
+    border: 3px solid pink;
+    display: grid;
+    grid-template-areas:
+        "player-moveset    computer-moveset";
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    height: 100%;
+    justify-items: center;
+    width: 100%;
+}
 
+ul {
+    display: inline-block;
+    font-size: 40px;
+}
+
+.player-moveset {
+    grid-area: player-moveset;
+}
+
+.computer-moveset {
+    grid-area: computer-moveset;
+}
 
