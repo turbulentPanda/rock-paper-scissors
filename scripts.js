@@ -17,13 +17,18 @@ paperButton.addEventListener('click', () => playOneRound('paper'));
 const scissorsButton = document.querySelector('#scissors');
 scissorsButton.addEventListener('click', () => playOneRound('scissors'));
 
+const playerMoveset = document.querySelector('.player-moveset');
+const computerMoveset = document.querySelector('.computer-moveset');
+
+
 function compareScores(userScore, computerScore) {
+    let headerMessage = document.querySelector('.header > h2');
     if (userScore > computerScore) {
-        return "Congratulations! You won the whole thing!";
+        headerMessage.textContent = "Congratulations! You won the whole thing! Let's play again!";
     } else if (userScore < computerScore) {
-        return "Sorry! You lost the whole thing!";
+        headerMessage.textContent = "Sorry! You lost the whole thing! Let's try again!";
     } else {
-        return "Not the worst! You and the computer tied!";
+        headerMessage.textContent = "Not the worst! You and the computer tied! Let's play again!";
     }
 }
 
@@ -60,15 +65,35 @@ function playOneRound(userMove) {
     displayRoundResults(roundResult);
     updateMoveHistory(userSelection, computerSelection);
     updateScore(roundResult);
-    numberOfRounds++;
+    ++numberOfRounds;
     if (checkIfGameEnded(numberOfRounds)) {
+        compareScores(userWins, computerWins);
         reset();
     }
     return roundResult;
 }
 
-function reset(userScore, computerScore) {
-    alert(compareScores(userScore, computerScore));
+function reset() {
+    playerScore.textContent = 0;
+    computerScore.textContent = 0;
+    userWins = 0;
+    computerWins = 0;
+    numberOfRounds = 0;
+    removeListItems();
+}
+
+function removeListItems() {
+    let playerMoveset = document.querySelector(".player-moveset");
+    let computerMoveset = document.querySelector(".computer-moveset");
+    let computerMoves = document.querySelectorAll(".player-moveset > li");
+    computerMoves = Array.from(computerMoves);
+    let numberOfMoves = computerMoves.length;
+    for (let i = 0; i < numberOfMoves; i++) {
+        let playerMove = document.querySelector(".player-moveset > li");
+        let computerMove = document.querySelector(".computer-moveset > li")
+        playerMoveset.removeChild(playerMove);
+        computerMoveset.removeChild(computerMove);
+    }
 }
 
 function updateScore(roundResult) {
@@ -82,8 +107,8 @@ function updateScore(roundResult) {
     return [userWins, computerWins];
 }
 
-function checkIfGameEnded(userScore, computerScore) {
-    if (userScore === 5 || computerScore === 5) {
+function checkIfGameEnded(numberOfRounds) {
+    if (numberOfRounds > 4) {
         return true;
     } else {
         return false;
@@ -91,12 +116,10 @@ function checkIfGameEnded(userScore, computerScore) {
 }
 
 function updateMoveHistory(userSelection, computerSelection) {
-    const playerMoveset = document.querySelector('.player-moveset');
     let playerMove = document.createElement('li');
     playerMove.textContent = `${userSelection[0].toUpperCase()}${userSelection.substring(1)}`;
     playerMoveset.appendChild(playerMove);
 
-    const computerMoveset = document.querySelector('.computer-moveset');
     let computerMove = document.createElement('li');
     computerMove.textContent = `${computerSelection[0].toUpperCase()}${computerSelection.substring(1)}`;
     computerMoveset.appendChild(computerMove);
