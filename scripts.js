@@ -11,7 +11,6 @@ function updateScore(userScore, computerScore) {
 
 // function playGame() {
 //     let roundResult;
-
 //     for (let i = 0; i < 5; i++) {
 //         roundResult = playOneRound();
 //         if (roundResult === 'win') {
