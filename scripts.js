@@ -57,8 +57,8 @@ function playOneRound(userMove) {
         }
     }
     displayRoundResults(roundResult);
-    updateScore(roundResult);
     updateMoveHistory(userSelection, computerSelection);
+    updateScore(roundResult);
     return roundResult;
 }
 
@@ -73,7 +73,7 @@ function updateScore(roundResult) {
 }
 
 function checkIfGameEnded(userScore, computerScore) {
-    if (userScore === 0 || computerScore === 0) {
+    if (userScore === 5 || computerScore === 5) {
         return true;
     } else {
         return false;
