@@ -1,5 +1,6 @@
 let userWins = 0;
 let computerWins = 0;
+let numberOfRounds = 0;
 
 let playerScore = document.querySelector('.player-score > span');
 let computerScore = document.querySelector('.computer-score > span');
@@ -18,11 +19,11 @@ scissorsButton.addEventListener('click', () => playOneRound('scissors'));
 
 function compareScores(userScore, computerScore) {
     if (userScore > computerScore) {
-        console.log("Congratulations! You won the whole thing!");
+        return "Congratulations! You won the whole thing!";
     } else if (userScore < computerScore) {
-        console.log("Sorry! You lost the whole thing!");
+        return "Sorry! You lost the whole thing!";
     } else {
-        console.log("Not the worst! You and the computer tied!");
+        return "Not the worst! You and the computer tied!";
     }
 }
 
@@ -59,7 +60,15 @@ function playOneRound(userMove) {
     displayRoundResults(roundResult);
     updateMoveHistory(userSelection, computerSelection);
     updateScore(roundResult);
+    numberOfRounds++;
+    if (checkIfGameEnded(numberOfRounds)) {
+        reset();
+    }
     return roundResult;
+}
+
+function reset(userScore, computerScore) {
+    alert(compareScores(userScore, computerScore));
 }
 
 function updateScore(roundResult) {
@@ -70,6 +79,7 @@ function updateScore(roundResult) {
         computerWins++;
         computerScore.textContent = `${computerWins}`;
     }
+    return [userWins, computerWins];
 }
 
 function checkIfGameEnded(userScore, computerScore) {
