@@ -99,13 +99,28 @@ body {
         "move-buttons"
         "move-history";
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr 5fr;
+    grid-template-rows: 1fr 5fr 4fr;
     height: 100%;
     place-items: center;
     width: 100%;
 }
 
 /******** Move Buttons ********/
+.move-buttons {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.move-button {
+    height: 250px;
+    width: 250px;
+}
+
+button {
+    cursor: pointer;
+}
 
 /******** Move History ********/
 .move-history {
