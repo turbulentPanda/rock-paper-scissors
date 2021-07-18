@@ -58,6 +58,7 @@ function playOneRound(userMove) {
     }
     displayRoundResults(roundResult);
     updateScore(roundResult);
+    updateMoveHistory(userSelection, computerSelection);
     return roundResult;
 }
 
@@ -69,6 +70,18 @@ function updateScore(roundResult) {
         computerWins++;
         computerScore.textContent = `${computerWins}`;
     }
+}
+
+function updateMoveHistory(userSelection, computerSelection) {
+    const playerMoveset = document.querySelector('.player-moveset');
+    let playerMove = document.createElement('li');
+    playerMove.textContent = `${userSelection}`;
+    playerMoveset.appendChild(playerMove);
+
+    const computerMoveset = document.querySelector('.computer-moveset');
+    let computerMove = document.createElement('li');
+    computerMove.textContent = `${computerSelection}`;
+    computerMoveset.appendChild(computerMove);
 }
 
 function computerPlay() {
@@ -99,6 +112,7 @@ function displayRoundResults(roundResult) {
         return 'draw';
     }
 }
+
 
 function displayWinningMessage() {
     return "Yay! You won this round!";
