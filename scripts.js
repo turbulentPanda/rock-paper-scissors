@@ -1,20 +1,29 @@
-function playGame() {
-    let userWins = 0;
-    let computerWins = 0;
-    let roundResult;
+let userWins = 0;
+let computerWins = 0;
 
-    for (let i = 0; i < 5; i++) {
-        roundResult = playOneRound();
-        if (roundResult === 'win') {
-            userWins++;
-        } else if (roundResult === 'lose') {
-            computerWins++;
-        }
+function updateScore() {
+    if (userScore > computerScore) {
+        userWins++;
+    } else if (userScore < computerScore) {
+        computerWins++;
     }
-    compareScores(userWins, computerWins);
 }
 
-playGame();
+// function playGame() {
+//     let roundResult;
+
+//     for (let i = 0; i < 5; i++) {
+//         roundResult = playOneRound();
+//         if (roundResult === 'win') {
+//             userWins++;
+//         } else if (roundResult === 'lose') {
+//             computerWins++;
+//         }
+//     }
+//     compareScores(userWins, computerWins);
+// }
+
+// playGame();
 
 function compareScores(userScore, computerScore) {
     if (userScore > computerScore) {
