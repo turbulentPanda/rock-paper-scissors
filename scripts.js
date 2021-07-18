@@ -57,7 +57,7 @@ function playOneRound(userMove) {
         }
     }
     displayRoundResults(roundResult);
-    updateScore(roundResult)
+    updateScore(roundResult);
     return roundResult;
 }
 
@@ -87,14 +87,15 @@ function computerPlay() {
 }
 
 function displayRoundResults(roundResult) {
+    let headerMessage = document.querySelector('.header > h2');
     if (roundResult === 'win') {
-        console.log(displayWinningMessage());
+        headerMessage.textContent = `${displayWinningMessage()}`;
         return 'win';
     } else if (roundResult === 'lose') {
-        console.log(displayLosingMessage());
+        headerMessage.textContent = `${displayLosingMessage()}`;
         return 'lose';
     } else {
-        console.log(displayDrawMessage());
+        headerMessage.textContent = `${displayDrawMessage()}`;
         return 'draw';
     }
 }
