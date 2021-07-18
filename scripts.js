@@ -56,7 +56,7 @@ function playOneRound(userMove) {
             roundResult = 'draw';
         }
     }
-    displayRoundResults(roundResult, userSelection, computerSelection);
+    displayRoundResults(roundResult);
     updateScore(roundResult)
     return roundResult;
 }
