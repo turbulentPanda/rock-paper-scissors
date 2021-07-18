@@ -1,8 +1,8 @@
 let userWins = 0;
 let computerWins = 0;
 
-let playerScore = document.querySelector('.player-score');
-let computerScore = document.querySelector('.computer-score');
+let playerScore = document.querySelector('.player-score > span');
+let computerScore = document.querySelector('.computer-score > span');
 
 playerScore.textContent = `${userWins}`;
 computerScore.textContent = `${computerWins}`;
