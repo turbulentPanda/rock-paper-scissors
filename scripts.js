@@ -18,20 +18,6 @@ paperButton.addEventListener('click', () => playOneRound('paper'));
 const scissorsButton = document.querySelector('#scissors');
 scissorsButton.addEventListener('click', () => playOneRound('scissors'));
 
-// function playGame() {
-//     let roundResult;
-//     for (let i = 0; i < 5; i++) {
-//         roundResult = playOneRound();
-//         if (roundResult === 'win') {
-//             userWins++;
-//         } else if (roundResult === 'lose') {
-//             computerWins++;
-//         }
-//     }
-//     compareScores(userWins, computerWins);
-// }
-
-
 function compareScores(userScore, computerScore) {
     if (userScore > computerScore) {
         console.log("Congratulations! You won the whole thing!");
