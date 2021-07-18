@@ -1,14 +1,6 @@
 let userWins = 0;
 let computerWins = 0;
 
-function updateScore(userScore, computerScore) {
-    if (userScore > computerScore) {
-        userWins++;
-    } else if (userScore < computerScore) {
-        computerWins++;
-    }
-}
-
 const rockButton = document.querySelector('#rock');
 rockButton.addEventListener('click', () => playOneRound('rock'));
 
@@ -61,6 +53,15 @@ function playOneRound(userMove) {
     displayRoundResults(roundResult, userSelection, computerSelection);
     return roundResult;
 }
+
+function updateScore(roundResult) {
+    if (roundResult === 'win') {
+        userWins++;
+    } else if (roundResult === 'lose') {
+        computerWins++;
+    }
+}
+
 
 function computerPlay() {
     let randomNumber = getRandomInteger(3);
