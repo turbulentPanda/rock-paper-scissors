@@ -150,7 +150,7 @@ body {
 /******** Move Buttons ********/
 .move-buttons {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 40px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     place-items: center;
@@ -167,6 +167,12 @@ body {
 
 button {
     cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+button:hover {
+    border-color: #c6419a;
+    transform: scale(1.1);
 }
 
 /******** Move History ********/
