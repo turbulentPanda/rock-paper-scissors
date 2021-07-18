@@ -9,6 +9,11 @@ function updateScore(userScore, computerScore) {
     }
 }
 
+const moveButtons = document.querySelectorAll('.move-button');
+moveButtons.forEach((button) => {
+    button.addEventListener('click', playOneRound);
+});
+
 // function playGame() {
 //     let roundResult;
 //     for (let i = 0; i < 5; i++) {
