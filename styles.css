@@ -175,6 +175,11 @@ button:hover {
     transform: scale(1.1);
 }
 
+.move-icon {
+    height: 150px;
+    width: 150px;
+}
+
 /******** Move History ********/
 .move-history {
     align-items: start;
