@@ -64,7 +64,6 @@ function playOneRound(userMove) {
         }
     }
     displayRoundResults(roundResult);
-    // updateMoveHistory(userSelection, computerSelection);
     updateScore(roundResult);
     ++numberOfRounds;
     if (checkIfGameEnded(numberOfRounds)) {
@@ -127,16 +126,6 @@ function checkIfGameEnded(numberOfRounds) {
         return false;
     }
 }
-
-// function updateMoveHistory(userSelection, computerSelection) {
-//     let playerMove = document.createElement('li');
-//     playerMove.textContent = `${userSelection[0].toUpperCase()}${userSelection.substring(1)}`;
-//     playerMoveset.appendChild(playerMove);
-
-//     let computerMove = document.createElement('li');
-//     computerMove.textContent = `${computerSelection[0].toUpperCase()}${computerSelection.substring(1)}`;
-//     computerMoveset.appendChild(computerMove);
-// }
 
 function computerPlay() {
     let randomNumber = getRandomInteger(3);
