@@ -2,8 +2,8 @@ let userWins = 0;
 let computerWins = 0;
 let numberOfRounds = 0;
 
-let playerScore = document.querySelector('.player-score > span');
-let computerScore = document.querySelector('.computer-score > span');
+let playerScore = document.querySelector('.player-score span');
+let computerScore = document.querySelector('.computer-score  span');
 
 playerScore.textContent = `${userWins}`;
 computerScore.textContent = `${computerWins}`;
@@ -36,6 +36,7 @@ function playOneRound(userMove) {
     let computerSelection = computerPlay();
     let userSelection = userMove;
     let roundResult;
+    displayMoveImage(userSelection, computerSelection);
 
     if (userSelection === 'rock') {
         if (computerSelection === 'scissors') {
@@ -63,7 +64,7 @@ function playOneRound(userMove) {
         }
     }
     displayRoundResults(roundResult);
-    updateMoveHistory(userSelection, computerSelection);
+    // updateMoveHistory(userSelection, computerSelection);
     updateScore(roundResult);
     ++numberOfRounds;
     if (checkIfGameEnded(numberOfRounds)) {
@@ -71,6 +72,18 @@ function playOneRound(userMove) {
         reset();
     }
     return roundResult;
+}
+
+function displayMoveImage(userSelection, computerSelection) {
+    let playerMoveImage = document.querySelector('.player-move-image');
+    playerMoveImage.setAttribute('src', `${userSelection}.svg`);
+    let playerScore = document.querySelector('.player-score');
+    playerScore.appendChild(playerMoveImage);
+
+    let computerMoveImage = document.querySelector('.computer-move-image');
+    computerMoveImage.setAttribute('src', `${computerSelection}.svg`);
+    let computerScore = document.querySelector('.computer-score');
+    computerScore.appendChild(computerMoveImage);
 }
 
 function reset() {
@@ -115,15 +128,15 @@ function checkIfGameEnded(numberOfRounds) {
     }
 }
 
-function updateMoveHistory(userSelection, computerSelection) {
-    let playerMove = document.createElement('li');
-    playerMove.textContent = `${userSelection[0].toUpperCase()}${userSelection.substring(1)}`;
-    playerMoveset.appendChild(playerMove);
+// function updateMoveHistory(userSelection, computerSelection) {
+//     let playerMove = document.createElement('li');
+//     playerMove.textContent = `${userSelection[0].toUpperCase()}${userSelection.substring(1)}`;
+//     playerMoveset.appendChild(playerMove);
 
-    let computerMove = document.createElement('li');
-    computerMove.textContent = `${computerSelection[0].toUpperCase()}${computerSelection.substring(1)}`;
-    computerMoveset.appendChild(computerMove);
-}
+//     let computerMove = document.createElement('li');
+//     computerMove.textContent = `${computerSelection[0].toUpperCase()}${computerSelection.substring(1)}`;
+//     computerMoveset.appendChild(computerMove);
+// }
 
 function computerPlay() {
     let randomNumber = getRandomInteger(3);
