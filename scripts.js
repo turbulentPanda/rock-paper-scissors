@@ -75,12 +75,12 @@ function playOneRound(userMove) {
 
 function displayMoveImage(userSelection, computerSelection) {
     let playerMoveImage = document.querySelector('.player-move-image');
-    playerMoveImage.setAttribute('src', `${userSelection}.svg`);
+    playerMoveImage.setAttribute('src', `images/${userSelection}.svg`);
     let playerScore = document.querySelector('.player-score');
     playerScore.appendChild(playerMoveImage);
 
     let computerMoveImage = document.querySelector('.computer-move-image');
-    computerMoveImage.setAttribute('src', `${computerSelection}.svg`);
+    computerMoveImage.setAttribute('src', `images/${computerSelection}.svg`);
     let computerScore = document.querySelector('.computer-score');
     computerScore.appendChild(computerMoveImage);
 }
@@ -92,6 +92,10 @@ function reset() {
     computerWins = 0;
     numberOfRounds = 0;
     removeListItems();
+    let playerMoveImage = document.querySelector('.player-move-image');
+    playerMoveImage.setAttribute('src', 'images/panda-icon.png');
+    let computerMoveImage = document.querySelector('.computer-move-image');
+    computerMoveImage.setAttribute('src', 'images/ghost-icon.png');
 }
 
 function removeListItems() {
