@@ -4,8 +4,10 @@
 
 *What I Learned*: 
 
-Key Technologies/Techniques in Brief: JavaScript conditional statements, for loops, while loops, functions
+Key Technologies/Techniques in Brief: JavaScript conditional statements, for loops, while loops, functions, and DOM manipulation.
 
-The focus for this project was on using conditional statements, looping structures, and functions. Conceptually, the program was very easy to make! It was just about comparing the user input to the random computer input and deciding the winner (according to standard rock-paper-scissors rules).
+Originally, this game was meant to be played in the browser console. Conceptually, it was relatively straightforward and consisted of using a random number generator to create the computer's move and then comparing it using a series of if-else statements with the user input (submitted via a prompt).
 
-However, implementing it took more work than I anticipated. In particular, reducing code duplication and making succinct functions took more thought than I expected. I'll probably come back to this and refactor the code to simplify and reduce the amount of code.
+I later refactored the program to provide a simple GUI. This introduced DOM manipulation and event handling. This was my first experience refactoring a program and it was much more difficult than I anticipated! I learned a lot about the importance of planning projects out on paper with pseudocode and making succinct functions.
+
+As I learn more about code organization, I will revisit this program to refactor it further and make the program clearer. A more immediate goal will be to go back and ensure coherent naming conventions were used.
