@@ -66,7 +66,7 @@ function playOneRound(userMove) {
     displayRoundResults(roundResult);
     updateScore(roundResult);
     ++numberOfRounds;
-    if (checkIfGameEnded(numberOfRounds)) {
+    if (checkIfGameEnded(userWins, computerWins)) {
         compareScores(userWins, computerWins);
         reset();
     }
@@ -119,8 +119,8 @@ function updateScore(roundResult) {
     return [userWins, computerWins];
 }
 
-function checkIfGameEnded(numberOfRounds) {
-    if (numberOfRounds > 4) {
+function checkIfGameEnded(userWins, computerWins) {
+    if (userWins === 5 || computerWins === 5) {
         return true;
     } else {
         return false;
