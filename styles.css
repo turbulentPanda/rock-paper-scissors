@@ -81,8 +81,8 @@ body {
 
 /******** Header ********/
 .header {
-    background: #485665;
-    border-bottom: 4px solid #c6419a;
+    background: #c3d2d5;
+    border-bottom: 6px solid #c6419a;
     display: grid;
     grid-area: header;
     height: 100%;
@@ -93,13 +93,13 @@ body {
 }
 
 .header > h1 {
-    color: #22aaa1;
+    color: #3d1308;
 }
 
 /******** Main Content ********/
 .main-content {
     align-items: start;
-    background: #262e36;
+    background: #37515f; 
     display: grid;
     grid-area: main-content;
     grid-template-areas: 
@@ -184,7 +184,7 @@ button {
 }
 
 button:hover {
-    border-color: #c6419a;
+    border: 2px solid #c6419a;
     transform: scale(1.1);
 }
 
