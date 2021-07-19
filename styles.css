@@ -96,12 +96,6 @@ body {
     color: #22aaa1;
 }
 
-.header > h2 {
-    font-size: 30px;
-    margin-top: 20px;
-    text-align: center;
-}
-
 /******** Main Content ********/
 .main-content {
     align-items: start;
