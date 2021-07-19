@@ -114,6 +114,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 3fr 5fr 3fr;
     height: 100%;
+    overflow-y: hidden;
     place-items: center;
     width: 100%;
 }
